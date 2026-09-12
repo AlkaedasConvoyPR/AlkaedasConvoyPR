@@ -242,6 +242,102 @@ footer{
   .footer-grid{grid-template-columns:1fr;text-align:center}
   .footer-logo{margin:auto}.copy{flex-direction:column;gap:10px;text-align:center}
 }
+
+/* ===== VERSION 2 LAYOUT IMPROVEMENTS ===== */
+body{min-width:0}
+.wrap{width:min(1500px,94vw)}
+.topbar{backdrop-filter:blur(10px)}
+.nav{min-height:74px}
+.nav-links{min-width:0}
+.nav-links a{white-space:nowrap}
+
+.hero{
+  min-height:clamp(560px,72vh,820px);
+  background-size:cover;
+  background-position:center center;
+}
+.hero-content{padding-bottom:50px}
+
+.feature-strip{margin-top:-20px}
+.about-update{align-items:stretch}
+.about,.update-card{min-height:360px}
+
+.gallery{
+  grid-template-columns:repeat(4,minmax(0,1fr));
+}
+.gallery-item{aspect-ratio:16/9}
+
+@media(max-width:1200px){
+  .nav{gap:14px}
+  .nav-links{gap:15px}
+  .nav-links a{font-size:13px}
+  .nav-logo{width:110px;height:60px}
+  .gallery{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+
+@media(max-width:900px){
+  .topbar{position:sticky}
+  .nav{
+    flex-wrap:wrap;
+    justify-content:center;
+    padding:8px 0 12px;
+  }
+  .nav-logo{width:100px;height:54px}
+  .nav-links{
+    order:3;
+    width:100%;
+    overflow-x:auto;
+    justify-content:flex-start;
+    gap:18px;
+    padding:4px 8px 2px;
+    scrollbar-width:thin;
+  }
+  .nav-links a{
+    flex:0 0 auto;
+    font-size:13px;
+    padding:8px 0;
+  }
+  .hero{min-height:620px}
+  .feature-strip{grid-template-columns:repeat(3,1fr)}
+  .about-update{grid-template-columns:1fr}
+  .gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+@media(max-width:600px){
+  .wrap{width:min(96vw,1500px)}
+  .hero{
+    min-height:560px;
+    background-position:center top;
+  }
+  .hero-content{padding:0 10px 35px}
+  .discord-btn{
+    font-size:16px;
+    gap:10px;
+    padding:12px 14px;
+    max-width:95vw;
+  }
+  .discord-icon{width:40px;height:40px;font-size:24px}
+  .feature-strip{grid-template-columns:repeat(2,1fr)}
+  .feature{padding:18px 8px}
+  .feature h3{font-size:16px}
+  .feature p{font-size:10px}
+  .section-title{font-size:28px}
+  .about{padding:24px}
+  .about p{font-size:15px}
+  .script{font-size:34px}
+  .gallery{grid-template-columns:1fr}
+  .gallery-item{aspect-ratio:16/10}
+  .updates-grid{grid-template-columns:1fr}
+  .footer-center .script{font-size:32px}
+  .motto{font-size:12px;letter-spacing:2px}
+}
+
+@media(max-width:420px){
+  .nav-links{gap:14px}
+  .nav-links a{font-size:12px}
+  .hero{min-height:500px}
+}
+
 </style>
 </head>
 <body>
@@ -295,10 +391,7 @@ footer{
       <div class="panel about">
         <h2 class="section-title">Sobre Nosotros</h2>
         <p>
-          Alkaedas Convoy Puerto Rico is more than a gaming community — we are a family.
-          We bring drivers together to enjoy convoys, custom trucks, heavy hauling,
-          screenshots and unforgettable experiences in American Truck Simulator.
-          Our roots are Puerto Rican, and our roads are everywhere.
+          Alkaedas Convoy Puerto Rico es más que una comunidad de videojuegos: somos una familia. Reunimos conductores para disfrutar de convoyes, camiones personalizados, cargas pesadas, capturas de pantalla y experiencias inolvidables en American Truck Simulator. Nuestras raíces son puertorriqueñas y nuestras carreteras están por todas partes.
         </p>
         <div class="script">La carretera nos une</div>
       </div>
