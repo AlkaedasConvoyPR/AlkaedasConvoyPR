@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Alkaedas Convoy Puerto Rico — Camiones, convoyes, comunidad, eventos y diseños personalizados. Únete a nuestro Discord.">
+<title>Alkaedas Convoy Puerto Rico</title>
+<style>
+:root{
+  --red:#ff1838;
+  --blue:#248cff;
+  --purple:#b431ff;
+  --ink:#03050a;
+  --panel:#090c13;
+  --line:rgba(255,255,255,.15);
+  --text:#f5f7fb;
+  --muted:#adb6c5;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Impact, Haettenschweiler, "Arial Narrow Bold", Arial, sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(circle at 15% 15%,rgba(31,83,255,.14),transparent 25%),
+    radial-gradient(circle at 85% 25%,rgba(255,0,60,.12),transparent 24%),
+    #03050a;
+  overflow-x:hidden;
+}
+a{color:inherit}
+.wrap{width:min(1500px,95%);margin:auto}
+
+/* NAV */
+.topbar{
+  position:sticky;top:0;z-index:50;
+  background:rgba(2,3,7,.95);
+  border-bottom:1px solid rgba(69,121,255,.4);
+  box-shadow:0 8px 35px rgba(0,0,0,.5);
+}
+.nav{
+  min-height:82px;display:flex;align-items:center;gap:28px;
+}
+.nav-logo{
+  width:128px;height:68px;object-fit:contain;filter:drop-shadow(0 0 12px rgba(255,30,48,.35));
+}
+.nav-links{
+  display:flex;align-items:center;justify-content:center;gap:27px;flex:1;
+}
+.nav-links a{
+  text-decoration:none;text-transform:uppercase;font-size:17px;letter-spacing:.5px;
+  padding:29px 0 24px;border-bottom:3px solid transparent;
+}
+.nav-links a:hover{border-color:var(--red);text-shadow:0 0 10px var(--red)}
+.socials{display:flex;gap:10px}
+.social-pill{
+  width:34px;height:34px;border-radius:9px;display:grid;place-items:center;
+  background:#10172a;border:1px solid rgba(255,255,255,.15);font-family:Arial;font-weight:900;
+}
+
+/* HERO */
+.hero{
+  position:relative;min-height:760px;
+  display:flex;align-items:flex-end;justify-content:center;
+  background:
+    linear-gradient(180deg,rgba(0,0,0,.08) 40%,rgba(1,2,5,.88) 100%),
+    url("images/alkaedas-hero-bg.webp") center/cover no-repeat;
+  border-bottom:1px solid rgba(64,121,255,.5);
+}
+.hero::after{
+  content:"";position:absolute;inset:auto 0 0;height:160px;
+  background:linear-gradient(transparent,#03050a);pointer-events:none;
+}
+.hero-content{
+  position:relative;z-index:2;text-align:center;padding:0 20px 55px;
+}
+.discord-btn{
+  display:inline-flex;align-items:center;gap:17px;
+  text-decoration:none;text-transform:uppercase;
+  font-size:30px;letter-spacing:1px;
+  padding:17px 28px;border:2px solid #5c8dff;border-radius:11px;
+  background:linear-gradient(180deg,rgba(23,51,138,.96),rgba(19,13,69,.98));
+  box-shadow:0 0 8px #fff,0 0 28px #316cff,0 0 40px rgba(207,31,255,.6);
+  transition:.2s ease;
+}
+.discord-btn:hover{transform:scale(1.035);box-shadow:0 0 10px #fff,0 0 38px #316cff,0 0 55px #e21fff}
+.discord-icon{
+  width:48px;height:48px;border-radius:50%;display:grid;place-items:center;
+  background:white;color:#5865f2;font-family:Arial;font-size:29px;font-weight:900;
+}
+.discord-sub{font-family:Arial;font-size:10px;letter-spacing:1.2px;margin-top:2px}
+
+/* FEATURE STRIP */
+.feature-strip{
+  position:relative;z-index:4;margin-top:-26px;
+  display:grid;grid-template-columns:repeat(6,1fr);
+  border:1px solid rgba(249,45,91,.55);
+  border-radius:13px;overflow:hidden;
+  background:rgba(5,6,12,.96);
+  box-shadow:0 0 35px rgba(69,36,255,.13);
+}
+.feature{
+  text-align:center;padding:25px 12px 21px;border-right:1px solid var(--line);
+}
+.feature:last-child{border-right:0}
+.feature .icon{font-family:Arial;font-size:37px;line-height:1;margin-bottom:13px}
+.feature h3{margin:0 0 7px;font-size:20px;text-transform:uppercase}
+.feature p{font-family:Arial;margin:0;font-size:11px;line-height:1.35;color:#d5d9e2;text-transform:uppercase;letter-spacing:.7px}
+
+/* COMMON */
+section{scroll-margin-top:95px}
+.section-title{
+  display:flex;align-items:center;gap:12px;text-transform:uppercase;
+  font-size:35px;margin:0 0 21px;
+}
+.section-title::before{content:"";width:10px;height:37px;background:var(--red);transform:skew(-17deg);box-shadow:0 0 12px rgba(255,24,56,.4)}
+.panel{
+  background:linear-gradient(145deg,rgba(13,17,27,.98),rgba(4,7,13,.97));
+  border:1px solid rgba(79,116,255,.45);
+  border-radius:12px;overflow:hidden;
+}
+
+/* ABOUT + UPDATE */
+.about-update{padding:50px 0 34px;display:grid;grid-template-columns:1.55fr 1fr;gap:18px}
+.about{
+  min-height:330px;padding:34px;
+  background:
+    linear-gradient(90deg,rgba(2,4,8,.94),rgba(2,4,8,.62)),
+    url("images/alkaedas-hero-bg.webp") center/cover no-repeat;
+}
+.about p{
+  font-family:Arial,sans-serif;font-size:17px;line-height:1.6;max-width:780px;color:#f3f3f3;
+}
+.script{
+  margin-top:22px;font-family:"Brush Script MT","Segoe Script",cursive;
+  font-size:46px;font-style:italic;transform:rotate(-2deg);display:inline-block;
+  border-bottom:6px solid var(--red);padding:0 15px 4px;
+}
+.update-card{
+  min-height:330px;padding:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  background:radial-gradient(circle at 50% 40%,rgba(139,36,255,.22),transparent 50%),#06070c;
+}
+.update-card img{width:min(560px,95%);max-height:205px;object-fit:contain;filter:drop-shadow(0 0 20px rgba(174,46,255,.45))}
+.neon-btn{
+  margin-top:8px;display:inline-block;text-decoration:none;text-transform:uppercase;
+  padding:13px 28px;border-radius:7px;border:2px solid #c63cff;background:#111017;
+  box-shadow:0 0 11px #b82eff, inset 0 0 12px rgba(162,32,255,.25);
+}
+
+/* UPDATES */
+.updates{padding:25px 0 50px}
+.updates-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.update-post{padding:22px}
+.update-post .date{font-family:Arial;color:#c793ff;font-size:13px;margin-bottom:8px}
+.update-post h3{text-transform:uppercase;margin:0 0 9px;font-size:23px}
+.update-post p{font-family:Arial;color:#cbd1dc;line-height:1.55;margin:0}
+
+/* GALLERY */
+.gallery-section{padding:20px 0 60px}
+.gallery-header{display:flex;justify-content:space-between;align-items:center;gap:20px}
+.small-btn{
+  cursor:pointer;background:#0d0816;color:white;text-transform:uppercase;font-weight:900;
+  border:1px solid #a633ff;border-radius:6px;padding:10px 17px;box-shadow:0 0 10px rgba(173,40,255,.3);
+}
+.gallery{
+  display:grid;grid-template-columns:repeat(6,1fr);gap:14px;
+}
+.gallery-item{
+  aspect-ratio:16/10;border-radius:7px;overflow:hidden;border:1px solid #c4d2ec;
+  cursor:pointer;background:#111;position:relative;transition:.2s ease;
+}
+.gallery-item:hover{transform:translateY(-4px);box-shadow:0 8px 25px rgba(38,107,255,.3)}
+.gallery-item img{width:100%;height:100%;object-fit:cover;display:block}
+.gallery-item.extra{display:none}
+.gallery.show-all .gallery-item.extra{display:block}
+
+/* RULES/EVENTS */
+.info-grid{padding:30px 0 55px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.info-panel{padding:28px}
+.info-panel p,.info-panel li{font-family:Arial;color:#cdd3df;line-height:1.6}
+.info-panel ul{padding-left:20px}
+
+/* FOOTER */
+footer{
+  border-top:1px solid rgba(69,113,255,.4);background:#020307;
+  padding:40px 0 26px;
+}
+.footer-grid{display:grid;grid-template-columns:230px 1fr 270px;align-items:center;gap:25px}
+.footer-logo{width:210px;max-height:130px;object-fit:contain}
+.footer-center{text-align:center}
+.footer-center .script{font-size:42px;margin:0}
+.motto{margin-top:18px;font-size:16px;letter-spacing:4px;text-transform:uppercase}
+.motto b{color:var(--red);margin:0 7px}
+.footer-right{text-align:center;font-family:Arial}
+.footer-right .pr{font-size:55px}
+.copy{margin-top:28px;padding-top:18px;border-top:1px solid rgba(255,255,255,.13);font-family:Arial;color:#8e96a5;font-size:13px;display:flex;justify-content:space-between}
+
+/* LIGHTBOX */
+.lightbox{
+  display:none;position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.95);
+  align-items:center;justify-content:center;padding:32px;
+}
+.lightbox.open{display:flex}
+.lightbox img{max-width:95vw;max-height:91vh;border-radius:9px}
+.lightbox-close{position:absolute;right:25px;top:12px;font-family:Arial;font-size:48px;cursor:pointer}
+
+/* MOTION */
+@keyframes glowPulse{
+  0%,100%{filter:drop-shadow(0 0 4px rgba(255,255,255,.25))}
+  50%{filter:drop-shadow(0 0 15px rgba(55,113,255,.75))}
+}
+.nav-logo,.footer-logo{animation:glowPulse 3s ease-in-out infinite}
+@keyframes bgMove{
+  0%{background-position:center center}
+  50%{background-position:center 46%}
+  100%{background-position:center center}
+}
+.hero{animation:bgMove 10s ease-in-out infinite}
+
+@media(max-width:1050px){
+  .socials{display:none}
+  .nav-links{gap:16px}.nav-links a{font-size:14px}
+  .feature-strip{grid-template-columns:repeat(3,1fr)}
+  .feature:nth-child(3){border-right:0}
+  .about-update,.info-grid{grid-template-columns:1fr}
+  .gallery{grid-template-columns:repeat(3,1fr)}
+  .updates-grid{grid-template-columns:1fr}
+}
+@media(max-width:720px){
+  .topbar{position:relative}
+  .nav{flex-direction:column;gap:0;padding:8px 0}
+  .nav-logo{width:110px}
+  .nav-links{flex-wrap:wrap;gap:7px 18px;padding-bottom:12px}
+  .nav-links a{padding:3px 0}
+  .hero{min-height:580px;background-size:cover}
+  .discord-btn{font-size:20px;padding:12px 17px}
+  .feature-strip{grid-template-columns:repeat(2,1fr)}
+  .feature{border-bottom:1px solid var(--line)}
+  .feature:nth-child(odd){border-right:1px solid var(--line)}
+  .feature:nth-child(even){border-right:0}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr;text-align:center}
+  .footer-logo{margin:auto}.copy{flex-direction:column;gap:10px;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="nav wrap">
+    <img class="nav-logo" src="images/alkaedas-logo.webp" alt="Alkaedas Convoy Puerto Rico">
+    <nav class="nav-links" aria-label="Navegación principal">
+      <a href="#home">Inicio</a>
+      <a href="#about">Nosotros</a>
+      <a href="#rules">Reglas</a>
+      <a href="#gallery">Galería</a>
+      <a href="#events">Eventos</a>
+      <a href="#updates">Actualizaciones</a>
+      <a href="https://discord.gg/9PQ2Wvw4R" target="_blank" rel="noopener">Únete</a>
+    </nav>
+    <div class="socials" aria-label="Enlaces sociales">
+      <a class="social-pill" href="https://discord.gg/9PQ2Wvw4R" target="_blank" rel="noopener">D</a>
+      <span class="social-pill">▶</span>
+      <span class="social-pill">♪</span>
+      <span class="social-pill">◎</span>
+    </div>
+  </div>
+</header>
+
+<main id="home">
+  <section class="hero">
+    <div class="hero-content">
+      <a class="discord-btn" href="https://discord.gg/9PQ2Wvw4R" target="_blank" rel="noopener">
+        <span class="discord-icon">☯</span>
+        <span>
+          Únete a Nuestro Discord
+          <div class="discord-sub">Haz clic aquí para ser parte de la familia</div>
+        </span>
+        <span>❯❯</span>
+      </a>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <section class="feature-strip" aria-label="Características de la comunidad">
+      <div class="feature"><div class="icon">🚛</div><h3>Convoyes</h3><p>Conductores reales<br>rutas reales</p></div>
+      <div class="feature"><div class="icon">👥</div><h3>Comunidad</h3><p>Juega · habla · conduce<br>juntos</p></div>
+      <div class="feature"><div class="icon">📅</div><h3>Eventos</h3><p>Comunidad<br>convoys</p></div>
+      <div class="feature"><div class="icon">🔧</div><h3>Diseños Personalizados</h3><p>Camiones · remolques<br>diseños</p></div>
+      <div class="feature"><div class="icon">🌐</div><h3>ATS</h3><p>American Truck<br>Simulator</p></div>
+      <div class="feature"><div class="icon">🤝</div><h3>Familia</h3><p>Respeto · disciplina<br>siempre activos</p></div>
+    </section>
+
+    <section class="about-update" id="about">
+      <div class="panel about">
+        <h2 class="section-title">Sobre Nosotros</h2>
+        <p>
+          Alkaedas Convoy Puerto Rico is more than a gaming community — we are a family.
+          We bring drivers together to enjoy convoys, custom trucks, heavy hauling,
+          screenshots and unforgettable experiences in American Truck Simulator.
+          Our roots are Puerto Rican, and our roads are everywhere.
+        </p>
+        <div class="script">La carretera nos une</div>
+      </div>
+
+      <div class="panel update-card">
+        <img src="images/alkaedas-update.webp" alt="Alkaedas Update">
+        <a class="neon-btn" href="#updates">Ver Todas las Actualizaciones ❯</a>
+      </div>
+    </section>
+
+    <section class="updates" id="updates">
+      <h2 class="section-title">Actualizaciones</h2>
+      <div class="updates-grid">
+        <article class="panel update-post">
+          <div class="date">ÚLTIMAS NOTICIAS DEL SERVIDOR</div>
+          <h3>Actualizaciones de Alkaedas</h3>
+          <p>Aquí aparecerán noticias del servidor, anuncios de convoyes, nuevas funciones e información importante.</p>
+        </article>
+        <article class="panel update-post">
+          <div class="date">CONVOYES</div>
+          <h3>Próximas Rutas</h3>
+          <p>Aquí puedes publicar las fechas de los convoyes, los puntos de encuentro y la información de las rutas, además de compartirla en Discord.</p>
+        </article>
+        <article class="panel update-post">
+          <div class="date">COMUNIDAD</div>
+          <h3>Fotos y Novedades de Camiones</h3>
+          <p>Usa esta sección para nuevos diseños, miembros destacados, capturas de pantalla, camiones personalizados y anuncios de la comunidad.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="gallery-section" id="gallery">
+      <div class="gallery-header">
+        <h2 class="section-title">Galería</h2>
+        <button class="small-btn" id="galleryToggle" onclick="toggleGallery()">Ver Todas las Fotos ❯</button>
+      </div>
+      <div class="gallery" id="galleryGrid">
+        <div class="gallery-item" onclick="openLightbox('images/gallery-01.webp')">
+          <img src="images/gallery-01.webp" alt="Foto de la galería de Alkaedas Convoy Puerto Rico 1" loading="lazy">
+        </div>
+        <div class="gallery-item" onclick="openLightbox('images/gallery-02.webp')">
+          <img src="images/gallery-02.webp" alt="Foto de la galería de Alkaedas Convoy Puerto Rico 2" loading="lazy">
+        </div>
+        <div class="gallery-item" onclick="openLightbox('images/gallery-03.webp')">
+          <img src="images/gallery-03.webp" alt="Foto de la galería de Alkaedas Convoy Puerto Rico 3" loading="lazy">
+        </div>
+        <div class="gallery-item" onclick="openLightbox('images/gallery-04.webp')">
+          <img src="images/gallery-04.webp" alt="Foto de la galería de Alkaedas Convoy Puerto Rico 4" loading="lazy">
+        </div>
+        <div class="gallery-item" onclick="openLightbox('images/gallery-05.webp')">
+          <img src="images/gallery-05.webp" alt="Foto de la galería de Alkaedas Convoy Puerto Rico 5" loading="lazy">
+        </div>
+        <div class="gallery-item" onclick="openLightbox('images/gallery-06.webp')">
+          <img src="images/gallery-06.webp" alt="Foto de la galería de Alkaedas Convoy Puerto Rico 6" loading="lazy">
+        </div>
+        <div class="gallery-item extra" onclick="openLightbox('images/gallery-07.webp')">
+          <img src="images/gallery-07.webp" alt="Foto de la galería de Alkaedas Convoy Puerto Rico 7" loading="lazy">
+        </div>
+        <div class="gallery-item extra" onclick="openLightbox('images/gallery-08.webp')">
+          <img src="images/gallery-08.webp" alt="Foto de la galería de Alkaedas Convoy Puerto Rico 8" loading="lazy">
+        </div>
+        <div class="gallery-item extra" onclick="openLightbox('images/gallery-09.webp')">
+          <img src="images/gallery-09.webp" alt="Foto de la galería de Alkaedas Convoy Puerto Rico 9" loading="lazy">
+        </div>
+        <div class="gallery-item extra" onclick="openLightbox('images/gallery-10.webp')">
+          <img src="images/gallery-10.webp" alt="Foto de la galería de Alkaedas Convoy Puerto Rico 10" loading="lazy">
+        </div>
+        <div class="gallery-item extra" onclick="openLightbox('images/gallery-11.webp')">
+          <img src="images/gallery-11.webp" alt="Foto de la galería de Alkaedas Convoy Puerto Rico 11" loading="lazy">
+        </div>
+        <div class="gallery-item extra" onclick="openLightbox('images/gallery-12.webp')">
+          <img src="images/gallery-12.webp" alt="Foto de la galería de Alkaedas Convoy Puerto Rico 12" loading="lazy">
+        </div>
+        <div class="gallery-item extra" onclick="openLightbox('images/gallery-13.webp')">
+          <img src="images/gallery-13.webp" alt="Foto de la galería de Alkaedas Convoy Puerto Rico 13" loading="lazy">
+        </div>
+        <div class="gallery-item extra" onclick="openLightbox('images/gallery-14.webp')">
+          <img src="images/gallery-14.webp" alt="Foto de la galería de Alkaedas Convoy Puerto Rico 14" loading="lazy">
+        </div>
+        <div class="gallery-item extra" onclick="openLightbox('images/gallery-15.webp')">
+          <img src="images/gallery-15.webp" alt="Foto de la galería de Alkaedas Convoy Puerto Rico 15" loading="lazy">
+        </div>
+        <div class="gallery-item extra" onclick="openLightbox('images/gallery-16.webp')">
+          <img src="images/gallery-16.webp" alt="Foto de la galería de Alkaedas Convoy Puerto Rico 16" loading="lazy">
+        </div>
+        <div class="gallery-item extra" onclick="openLightbox('images/gallery-17.webp')">
+          <img src="images/gallery-17.webp" alt="Foto de la galería de Alkaedas Convoy Puerto Rico 17" loading="lazy">
+        </div>
+        <div class="gallery-item extra" onclick="openLightbox('images/gallery-18.webp')">
+          <img src="images/gallery-18.webp" alt="Foto de la galería de Alkaedas Convoy Puerto Rico 18" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="info-grid">
+      <div class="panel info-panel" id="rules">
+        <h2 class="section-title">Reglas</h2>
+        <ul>
+          <li>Respeta a todos los miembros y mantén un ambiente amigable en la comunidad.</li>
+          <li>Sigue las instrucciones del convoy y conduce de forma segura durante los eventos organizados.</li>
+          <li>No se permite drama innecesario, acoso ni comportamiento que interrumpa la comunidad.</li>
+          <li>Las reglas completas del servidor y las instrucciones del equipo están disponibles en Discord.</li>
+        </ul>
+      </div>
+      <div class="panel info-panel" id="events">
+        <h2 class="section-title">Eventos</h2>
+        <p>
+          Convoy nights, heavy-haul runs, truck meets and special community events are announced in Discord.
+          Join the server so you do not miss the next run.
+        </p>
+        <a class="neon-btn" href="https://discord.gg/9PQ2Wvw4R" target="_blank" rel="noopener">Ver Eventos en Discord ❯</a>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <img class="footer-logo" src="images/alkaedas-logo.webp" alt="Alkaedas Convoy Puerto Rico">
+      <div class="footer-center">
+        <div class="script">Más que un juego, una familia</div>
+        <div class="motto">Disciplina <b>★</b> Respeto <b>★</b> Compañía <b>★</b> Siempre Activo</div>
+      </div>
+      <div class="footer-right">
+        <div class="pr">🇵🇷</div>
+        <p><strong>ALKAEDAS CONVOY PR</strong><br>La carretera nos une.</p>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© 2026 Alkaedas Convoy Puerto Rico. Todos los derechos reservados.</span>
+      <span>CONDUCE ★ CONECTA ★ PERTENECE</span>
+    </div>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <span class="lightbox-close" onclick="closeLightbox(event)">×</span>
+  <img id="lightboxImage" src="" alt="Imagen ampliada de la galería">
+</div>
+
+<script>
+function openLightbox(src){
+  document.getElementById('lightboxImage').src=src;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeLightbox(e){
+  if(e.target.id==='lightboxImage') return;
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow='';
+}
+function toggleGallery(){
+  const g=document.getElementById('galleryGrid');
+  const b=document.getElementById('galleryToggle');
+  g.classList.toggle('show-all');
+  b.textContent=g.classList.contains('show-all')?'Mostrar Menos ↑':'Ver Todas las Fotos ❯';
+}
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow='';
+  }
+});
+</script>
+</body>
+</html>
